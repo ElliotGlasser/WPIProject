@@ -199,33 +199,41 @@ function makeGuess(){
     } else if (warning ===12){
        
         guessButton.addEventListener('click', moveguessButton);
+        guessButton.addEventListener('mouseenter', moveguessButton);
     }
     else if (warning === 13) {
-
+        guessButton.removeEventListener('click', moveguessButton);
+        guessButton.removeEventListener('mouseenter', moveguessButton);
          
 
         guessButton.addEventListener('click', movePissedOffGuessButton);
+        guessButton.addEventListener('mouseenter', movePissedOffGuessButton);
         warning +=1
 
     } else if (warning === 14) {
         guessButton.addEventListener('click', movePissedOffGuessButton);
+        guessButton.addEventListener('mouseenter', movePissedOffGuessButton);
         tagline.textContent = "You think you can control me?";
         warning +=1
     } else if (warning === 15) {
         guessButton.addEventListener('click', movePissedOffGuessButton);
+        guessButton.addEventListener('mouseenter', movePissedOffGuessButton);
         homeButton.textContent = "I";
         warning +=1
     } else if (warning === 16) {
         guessButton.addEventListener('click', movePissedOffGuessButton);
+        guessButton.addEventListener('mouseenter', movePissedOffGuessButton);
         aboutmeButton.textContent = "am";
         warning +=1
 
     } else if (warning === 17) {
         guessButton.addEventListener('click', movePissedOffGuessButton);
+        guessButton.addEventListener('mouseenter', movePissedOffGuessButton);
         mytownButton.textContent = "a";
         warning +=1
     } else if (warning === 18) {
         guessButton.addEventListener('click', movePissedOffGuessButton);
+        guessButton.addEventListener('mouseenter', movePissedOffGuessButton);
         numgameButton.textContent = "god";
         window.location.href = "???.html";
 
@@ -236,8 +244,6 @@ function resetGame(){
         if (warning >= 12) {
             resetButton.style.display = "none";
             numtitle.textContent = "You think you can stop me?";
-            guessButton.removeEventListener('click', moveguessButton);
-            guessButton.removeEventListener('mouseenter', moveguessButton);
             warning +=1
             
 
