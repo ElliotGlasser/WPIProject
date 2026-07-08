@@ -44,3 +44,16 @@ td, th {
     padding: 10px;
     text-align: center;
 }
+.correct,
+.correct-demo{
+    background-color: green;
+
+}
+.close,
+.close-demo{
+    background-color: yellow;
+}
+.wrong,
+.wrong-demo{
+    background-color: gray;
+}
