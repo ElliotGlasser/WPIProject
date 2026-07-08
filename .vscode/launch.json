@@ -10,7 +10,7 @@
             "type": "editor-browser",
             "request": "launch",
             "name": "Open index.html",
-            "url": "file:///Users/elliotglasser/WPIProject/html/index.html"
+            "url": "file:///Users/elliotglasser/WPIProject/index.html"
         }
     ]
 }
