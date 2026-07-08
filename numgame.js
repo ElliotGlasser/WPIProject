@@ -199,7 +199,6 @@ function makeGuess(){
     } else if (warning ===12){
        
         guessButton.addEventListener('click', moveguessButton);
-        guessButton.addEventListener('mouseenter', moveguessButton);
     }
     else if (warning === 13) {
 
