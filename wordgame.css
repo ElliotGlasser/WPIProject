@@ -1,10 +1,10 @@
 .game-card{
     text-align: center;
 }
-#secret-display{
+#display{
     margin: 20px 0;
 }
-#secret-display span{
+#display span{
     display:inline-block;
     background-color: #f0f0f0;
     border: 2px solid #333333;
