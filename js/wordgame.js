@@ -14,6 +14,7 @@ function startGame(){
     guessField.value = "";
     tableBody.innerHTML = "";
     console.log("Secret Word: " + secretWord);
+    hideSecretWord();
 }
 function hideSecretWord(){
     secretDisplay.textContent = "";
@@ -21,6 +22,7 @@ function hideSecretWord(){
         let box = document.createElement("span");
         box.innerHTML="?";
         secretDisplay.appendChild(box);
+        
     }
 }
 function showSecretWord(){
@@ -38,15 +40,15 @@ function checkGuess(){
         return;
     }
     
-    //resultHTML = buildLetterFeedback(guess);
+    resultHTML = buildLetterFeedback(guess);
     if (guess === secretWord){
     
-        messageText.textContent = "You win!";
         showSecretWord();
-        //addGuessToTable(guess,resultHTML);
-    } else {
-        messageText.textContent = "Try again.";
-        //addGuessToTable(guess,resultHTML);
+        addGuessToTable(guess,resultHTML);
+    }else if (!/^[A-Za-z]$/.test(guess)) {
+        messageText.textContent = "We aren't doing this again!";
+    }else {
+        addGuessToTable(guess,resultHTML);
     }
 }
 function buildLetterFeedback(guess){
@@ -55,13 +57,18 @@ function buildLetterFeedback(guess){
         let letter = guess[i];
         let cssClass = "";
         if (letter === secretWord[i]) {
-            cssClass = correct
+            if (tries === 0){
+                cssClass = "special";
+            } else {
+            cssClass = "correct";
+            }
+            
         } else if (secretWord.includes(letter)) {
-            cssClass = close
+            cssClass = "close";
         } else {
-            cssClass = wrong
+            cssClass = "wrong";
         }
-        resultHTML += `<span class="letter-box ${cssClass}">${letter.toUpperCase()}</span>;`
+        resultHTML += `<span class="letter-box ${cssClass}">${letter.toUpperCase()}</span>`;
     }
     return resultHTML;
 }
@@ -72,7 +79,7 @@ function addGuessToTable(guess, resultHTML){
     tryCell.textContent = tries;
     row.appendChild(tryCell);
     let guessCell = document.createElement('td');
-    guessCell.textContent = guess;
+    guessCell.innerHTML = guess.toUpperCase();
     row.appendChild(guessCell);
     let resultCell = document.createElement('td');
     resultCell.innerHTML = resultHTML;

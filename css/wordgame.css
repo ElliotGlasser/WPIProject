@@ -49,6 +49,8 @@ td, th {
     background-color: green;
 
 }
+
+
 .close,
 .close-demo{
     background-color: yellow;
@@ -56,4 +58,18 @@ td, th {
 .wrong,
 .wrong-demo{
     background-color: gray;
+}
+.special,
+.special-demo{
+    background: linear-gradient(132deg, rgb(30, 144, 255) 0.00%, rgb(138, 43, 226) 100.00%);
+}
+
+.letter-box{
+    display: inline-block;
+    color: black;
+    border-radius: 6px;
+    padding: 8px 11px;
+    margin: 2px;
+    font-size: 20px;
+    font-weight: bold;
 }
