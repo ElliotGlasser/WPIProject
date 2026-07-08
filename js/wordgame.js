@@ -34,24 +34,31 @@ function showSecretWord(){
     }
 }
 function checkGuess(){
+
+    
     const guess = guessField.value.toLowerCase();
-    if (guess.length !== secretWord.length) {
-        messageText.textContent = "Please enter a " + secretWord.length + " letter word.";
+    if (words.includes(guess)){
+        messageText.textContent = "Please enter a valid word";
         return;
-    }
-    
-    if (tries >6){
-        messageText.textContent = "You have exceeded the maximum number of tries.";
-        setTimeout(() => {startGame()}, 3000)
-        return;
-    }
-    resultHTML = buildLetterFeedback(guess);
-    if (guess === secretWord){
-    
-        showSecretWord();
-        addGuessToTable(guess,resultHTML);
-    }else{
-        addGuessToTable(guess,resultHTML);
+    } else {    
+        if (guess.length !== secretWord.length) {
+            messageText.textContent = "Please enter a " + secretWord.length + " letter word.";
+            return;
+        }
+        
+        if (tries >6){
+            messageText.textContent = "You have exceeded the maximum number of tries.";
+            setTimeout(() => {startGame()}, 3000)
+            return;
+        }
+        resultHTML = buildLetterFeedback(guess);
+        if (guess === secretWord){
+        
+            showSecretWord();
+            addGuessToTable(guess,resultHTML);
+        }else{
+            addGuessToTable(guess,resultHTML);
+        }
     }
 }
 function buildLetterFeedback(guess){
