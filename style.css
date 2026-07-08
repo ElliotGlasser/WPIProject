@@ -1,0 +1,132 @@
+/* 
+  styles.css
+  Simple Launch student website template.
+  Students can safely change colors, fonts, spacing, and borders here.
+*/
+
+/* Basic page setup */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f7fb;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* Header section */
+header {
+  background-color: #1f5f99;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+.tagline {
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+/* Navigation menu */
+nav {
+  background-color: #3d6b99;
+  text-align: center;
+  padding: 12px;
+}
+
+
+
+.card2 {
+  text-align: center;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 12px;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+nav a:hover {
+  background-color: rgb(255, 255, 255);
+  animation-name: rainbow;
+  position: relative;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+  animation-direction: forwards;  
+
+}
+@keyframes rainbow {
+  0%   { background-color: #ff0000; }
+  16.66% { background-color: #ff7f00; }
+  33.33% { background-color: #8c8c08; }
+  50%  { background-color: #077a07; }
+  66.66% { background-color: #0b8585; }
+  83.33% { background-color: #0000ff; }
+  100% { background-color: #8b00ff; }
+}
+/* Main content area */
+main {
+  max-width: 900px;
+  margin: 25px auto;
+  padding: 0 20px;
+}
+
+/* Content cards */
+.card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.card h2 {
+  color: #463a58;
+  margin-top: 0;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+
+
+/* Footer */
+footer {
+  background-color: #491663;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+}
+
+/* Mobile-friendly layout */
+@media screen and (max-width: 600px) {
+  header h1 {
+    font-size: 28px;
+  }
+
+  nav a {
+    display: block;
+    margin: 6px 0;
+  }
+
+  main {
+    padding: 0 12px;
+  }
+}
