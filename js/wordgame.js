@@ -15,7 +15,14 @@ function startGame(){
     tableBody.innerHTML = "";
     console.log("Secret Word: " + secretWord);
 }
-
+function hideSecretWord(){
+    secretDisplay.textContent = "";
+    for (let i = 0; i < secretWord.length; i++) {
+        let box = document.createElement("span");
+        box.innerHTML="?";
+        secretDisplay.appendChild(box);
+    }
+}
 function showSecretWord(){
     secretDisplay.textContent = "";
     for (let i = 0; i < secretWord.length; i++) {
@@ -41,5 +48,36 @@ function checkGuess(){
         messageText.textContent = "Try again.";
         //addGuessToTable(guess,resultHTML);
     }
+}
+function buildLetterFeedback(guess){
+    let resultHTML = "";
+    for (let i = 0; i < guess.length; i++) {
+        let letter = guess[i];
+        let cssClass = "";
+        if (letter === secretWord[i]) {
+            cssClass = correct
+        } else if (secretWord.includes(letter)) {
+            cssClass = close
+        } else {
+            cssClass = wrong
+        }
+        resultHTML += `<span class="letter-box ${cssClass}">${letter.toUpperCase()}</span>;`
+    }
+    return resultHTML;
+}
+
+function addGuessToTable(guess, resultHTML){
+    const row = document.createElement('tr');
+    let tryCell = document.createElement('td');
+    tryCell.textContent = tries;
+    row.appendChild(tryCell);
+    let guessCell = document.createElement('td');
+    guessCell.textContent = guess;
+    row.appendChild(guessCell);
+    let resultCell = document.createElement('td');
+    resultCell.innerHTML = resultHTML;
+    row.appendChild(resultCell);
+    tableBody.appendChild(row);
+
 }
 startGame();
