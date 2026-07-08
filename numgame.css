@@ -1,0 +1,38 @@
+.game-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.game-box{
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.game-box label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#numfield {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #491663;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
