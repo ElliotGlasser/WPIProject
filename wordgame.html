@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">   
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="wordgame.css">
+</head>
+
+<body>
+    <header>
+        <h1 id="wordtitle">Word Game</h1>
+        <p class="tagline">Guess the word!</p>
+    </header>
+    <nav>
+        <a id="home-button" href="index.html">Home</a>
+        <a id="aboutme-button" href="aboutme.html">About Me</a>
+        <a id="mytown-button" href="mytown.html">My Town</a>
+        <a id="numgame-button" href="numgame.html">Number Game</a>
+        <a id="wordgame-button" href="wordgame.html">Word Game</a>
+    </nav>
+    <main>
+        <section class="card">
+            <h2>Guess the word!</h2>
+            <p>Try to guess the secret word. Enter your guess below.</p>
+            <div id="secrey-display">
+                <span>?</span>
+                <span>?</span>
+                <span>?</span>
+                <span>?</span>
+                <span>?</span>
+            </div>
+
+            <label for="guess-field">Your guess:</label>
+            <input type="text" id="guess-field" maxlength="5" placeholder="Enter a 5-letter word">
+            <button onclick="checkguess()">Enter</button>
+            <button onclick="startGame()">New Word</button>
+
+            <p id="message-text">Enter a 5-letter word</p>
+
+        </section>
+
+        <section class="card">
+            <h2>Guess History</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Try</th>
+                        <th>Guess</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody id="guess-history-body">
+                    <!-- Guess history will be populated here -->
+                </tbody>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>Letter feedback</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Color</th>
+                        <th>Meaning</th>
+                    </tr>
+                </thead>
+                <tbody id="letter-feedback-body">
+                    <tr>
+                        <td class="correct-demo">Green</td>
+                        <td>Correct letter in the correct position</td>
+                    </tr>
+                    <tr>
+                        <td class="close-demo">Yellow</td>
+                        <td>Correct letter in the wrong position</td>
+                    </tr>
+                    <tr>
+                        <td class="wrong-demo">Gray</td>
+                        <td>Incorrect letter</td>
+                    </tr>
+                </tbody>
+        </section>
+    </main>
+    <script src="wordgame.js"></script>
+</body>
+</html>
