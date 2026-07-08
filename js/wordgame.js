@@ -37,10 +37,8 @@ function checkGuess(){
 
     
     const guess = guessField.value.toLowerCase();
-    if (words.includes(guess)){
-        messageText.textContent = "Please enter a valid word";
-        return;
-    } else {    
+    
+     if (words.includes(guess)) {    
         if (guess.length !== secretWord.length) {
             messageText.textContent = "Please enter a " + secretWord.length + " letter word.";
             return;
@@ -59,6 +57,9 @@ function checkGuess(){
         }else{
             addGuessToTable(guess,resultHTML);
         }
+    }else  {
+        messageText.textContent = "Please enter a valid word";
+        return;
     }
 }
 function buildLetterFeedback(guess){
