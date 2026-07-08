@@ -1,0 +1,18 @@
+.game-card{
+    text-align: center;
+}
+#secret-display{
+    margin: 20px 0;
+}
+#secret-display span{
+    display:inline-block;
+    background-color: #f0f0f0;
+    border: 2px solid #333333;
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    line-height: 45px;
+    margin: 4px;
+    font-size: 26px;
+    font-weight: bold;
+}

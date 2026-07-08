@@ -200,8 +200,12 @@ function makeGuess(){
        
         guessButton.addEventListener('click', moveguessButton);
         guessButton.addEventListener('mouseenter', moveguessButton);
+    } else{
+        return;
     }
-    else if (warning === 13) {
+}
+function hoverButton(){
+    if (warning === 13) {
         guessButton.removeEventListener('click', moveguessButton);
         guessButton.removeEventListener('mouseenter', moveguessButton);
          
@@ -213,30 +217,35 @@ function makeGuess(){
     } else if (warning === 14) {
         guessButton.addEventListener('click', movePissedOffGuessButton);
         guessButton.addEventListener('mouseenter', movePissedOffGuessButton);
-        tagline.textContent = "You think you can control me?";
         warning +=1
     } else if (warning === 15) {
         guessButton.addEventListener('click', movePissedOffGuessButton);
         guessButton.addEventListener('mouseenter', movePissedOffGuessButton);
         homeButton.textContent = "I";
+        homeButton.style.backgroundColor = "red";
         warning +=1
     } else if (warning === 16) {
         guessButton.addEventListener('click', movePissedOffGuessButton);
         guessButton.addEventListener('mouseenter', movePissedOffGuessButton);
         aboutmeButton.textContent = "am";
+        aboutmeButton.style.backgroundColor = "red";
         warning +=1
 
     } else if (warning === 17) {
         guessButton.addEventListener('click', movePissedOffGuessButton);
         guessButton.addEventListener('mouseenter', movePissedOffGuessButton);
         mytownButton.textContent = "a";
+        mytownButton.style.backgroundColor = "red";
         warning +=1
     } else if (warning === 18) {
         guessButton.addEventListener('click', movePissedOffGuessButton);
         guessButton.addEventListener('mouseenter', movePissedOffGuessButton);
         numgameButton.textContent = "god";
-        window.location.href = "???.html";
+        numgameButton.style.backgroundColor = "red";
+        close();
 
+    } else{
+        return;
     }
 }
 function resetGame(){
@@ -244,6 +253,7 @@ function resetGame(){
         if (warning >= 12) {
             resetButton.style.display = "none";
             numtitle.textContent = "You think you can stop me?";
+            numtitle.style.backgroundColor = "red";
             warning +=1
             
 
