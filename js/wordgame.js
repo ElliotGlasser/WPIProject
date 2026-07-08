@@ -40,6 +40,11 @@ function checkGuess(){
         return;
     }
     
+    if (tries >6){
+        messageText.textContent = "You have exceeded the maximum number of tries.";
+        setTimeout(() => {startGame()}, 3000)
+        return;
+    }
     resultHTML = buildLetterFeedback(guess);
     if (guess === secretWord){
     
@@ -57,7 +62,7 @@ function buildLetterFeedback(guess){
         if (letter === secretWord[i]) {
             if (tries === 0){
                 cssClass = "special";
-                
+
             } else {
                 cssClass = "correct";
             }
