@@ -45,9 +45,7 @@ function checkGuess(){
     
         showSecretWord();
         addGuessToTable(guess,resultHTML);
-    }else if (!/^[A-Za-z]$/.test(guess)) {
-        messageText.textContent = "We aren't doing this again!";
-    }else {
+    }else{
         addGuessToTable(guess,resultHTML);
     }
 }
@@ -59,8 +57,9 @@ function buildLetterFeedback(guess){
         if (letter === secretWord[i]) {
             if (tries === 0){
                 cssClass = "special";
+                
             } else {
-            cssClass = "correct";
+                cssClass = "correct";
             }
             
         } else if (secretWord.includes(letter)) {
@@ -76,7 +75,7 @@ function buildLetterFeedback(guess){
 function addGuessToTable(guess, resultHTML){
     const row = document.createElement('tr');
     let tryCell = document.createElement('td');
-    tryCell.textContent = tries;
+    tryCell.textContent = tries + 1;
     row.appendChild(tryCell);
     let guessCell = document.createElement('td');
     guessCell.innerHTML = guess.toUpperCase();
