@@ -202,8 +202,7 @@ function makeGuess(){
         guessButton.addEventListener('mouseenter', moveguessButton);
     }
     else if (warning === 13) {
-        guessButton.removeEventListener('click', moveguessButton);
-        guessButton.removeEventListener('mouseenter', moveguessButton);
+
          
 
         guessButton.addEventListener('click', movePissedOffGuessButton);
@@ -238,6 +237,8 @@ function resetGame(){
         if (warning >= 12) {
             resetButton.style.display = "none";
             numtitle.textContent = "You think you can stop me?";
+            guessButton.removeEventListener('click', moveguessButton);
+            guessButton.removeEventListener('mouseenter', moveguessButton);
             warning +=1
             
 
