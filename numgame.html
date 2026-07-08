@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="numgame.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+
+  </head>
+  <body>
+
+    <header>
+      <h1 id="numtitle">Number Game</h1>
+      <p class="tagline">Guess the number between 1 and 100!</p>
+    </header>
+
+
+  <nav>
+    <a id="home-button" href="index.html">Home</a>
+    <a id="aboutme-button" href="aboutme.html">About Me</a>
+    <a id="mytown-button" href="mytown.html">My Town</a>
+    <a id="numgame-button" href="numgame.html">Number Game</a>
+  </nav>
+
+
+    <main>
+      <section class="card">
+        <h2>Number Guessing Game</h2>
+        <p>Try to guess the secret number  between 1 and 100. Enter your guess below and click "Submit".</p>
+        <div class="game-box">
+          
+          <input type="number" id="num-field" min="1" max="100">
+          <button id="guess-button" onclick="makeGuess()">Submit</button>
+          <button id="reset-button" onclick="resetGame()">Reset</button>
+          <p id="guess-count-text">Number of guesses: 0</p>
+          <p id="message-text">Enter your first number:</p>
+        </div>
+
+      </section>
+    </main>
+    <script src="numgame.js"></script>
+  </body>
+  <footer>
+    <p>Created by Elliot for Launch.</p>
+  </footer>
+   
+</html>
