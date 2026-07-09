@@ -32,6 +32,8 @@ table{
     width: 100%;
     border-collapse: collapse;
     margin-top: 12px;
+    font-weight: bold;
+
 }
 
 th {
@@ -43,6 +45,10 @@ td, th {
     border: 1px solid;
     padding: 10px;
     text-align: center;
+}
+.guess-field{
+    font-weight: bold;
+
 }
 .correct,
 .correct-demo{
