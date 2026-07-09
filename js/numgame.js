@@ -9,6 +9,7 @@ const aboutmeButton = document.getElementById("aboutme-button");
 const mytownButton = document.getElementById("mytown-button");
 const numgameButton = document.getElementById("numgame-button");
 const tagline = document.getElementById("tagline");
+const body = document.getElementById("body");
 
 let min=1;
 let max=100;
@@ -254,6 +255,9 @@ function resetGame(){
             resetButton.style.display = "none";
             numtitle.textContent = "You think you can stop me?";
             numtitle.style.backgroundColor = "red";
+            body.classList.add('animate__animated', 'animate__shakeX');
+
+            setTimeout(() => {body.classList.remove('animate__animated', 'animate__shakeX');}, 500); // adjust (e.g. 800–1200ms)
             warning +=1
             
 
