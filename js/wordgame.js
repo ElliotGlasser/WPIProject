@@ -7,6 +7,12 @@ const guessField = document.getElementById('guess-field');
 const messageText = document.getElementById('message-Text');
 const tableBody = document.getElementById('guess-history-body');
 const secretDisplay = document.getElementById('display');
+const yayText = document.getElementById('yay-text');
+
+
+
+yayText.style.display = "none";
+yayText.style.setProperty('--animate-duration', '2s');
 
 function startGame(){
     secretWord = words[Math.floor(Math.random() * words.length)];
@@ -41,8 +47,8 @@ function checkGuess(){
 
         }
         
-        if (tries >6){
-            messageText.textContent = "You have exceeded the maximum number of tries.";
+        if (tries >= 6){
+            messageText.textContent = "You have exceeded the maximum number of tries. The secret word was" + secretWord;
             setTimeout(() => {startGame()}, 3000)
             return;
             guessField.value = "";
@@ -69,15 +75,31 @@ function checkGuess(){
 }
 
 }
-
 function buildLetterFeedback(guess){
     let resultHTML = "";
     for (let i = 0; i < guess.length; i++) {
         let letter = guess[i];
         let cssClass = "";
         if (letter === secretWord[i]) {
-            if (tries === 1){
+            if (tries === 0){
                 cssClass = "special";
+
+
+
+                var x = Math.random() * (window.innerWidth - yayText.offsetWidth);
+                var y = Math.random() * (window.innerHeight - yayText.offsetHeight);
+                yayText.style.display = "block";
+
+                yayText.style.left = `${x}px`;
+                yayText.style.top = `${y}px`;
+
+                yayText.classList.add('animate__animated', 'animate__jackInTheBox');
+
+                setTimeout(() => {yayText.classList.remove('animate__animated', 'animate__jackInTheBox');}, 2000);
+                yayText.classList.add('animate__animated', 'animate__fadeOut');
+                setTimeout(() => {yayText.classList.remove('animate__animated', 'animate__fadeOut');}, 2000);
+                setTimeout(()=>{yayText.style.display = "none";}, 2000);
+
 
             } else {
                 cssClass = "correct";
@@ -89,9 +111,17 @@ function buildLetterFeedback(guess){
             cssClass = "wrong";
         }
         resultHTML += `<span class="letter-box ${cssClass}">${letter.toUpperCase()}</span>`;
+
     }
+    tries+=1
     return resultHTML;
 }
+
+guessField.addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        checkGuess();
+    }
+});
 
 function addGuessToTable(guess, resultHTML){
     const row = document.createElement('tr');
