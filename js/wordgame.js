@@ -16,15 +16,7 @@ function startGame(){
     console.log("Secret Word: " + secretWord);
     hideSecretWord();
 }
-function hideSecretWord(){
-    secretDisplay.textContent = "";
-    for (let i = 0; i < secretWord.length; i++) {
-        let box = document.createElement("span");
-        box.innerHTML="?";
-        secretDisplay.appendChild(box);
-        
-    }
-}
+
 function showSecretWord(){
     secretDisplay.textContent = "";
     for (let i = 0; i < secretWord.length; i++) {
@@ -44,6 +36,7 @@ function checkGuess(){
             guessField.classList.add('animate__animated', 'animate__shakeX');
 
             setTimeout(() => {guessField.classList.remove('animate__animated', 'animate__shakeX');}, 500); // adjust (e.g. 800–1200ms)
+            guessField.value = "";
 
             return;
 
@@ -53,20 +46,27 @@ function checkGuess(){
             messageText.textContent = "You have exceeded the maximum number of tries.";
             setTimeout(() => {startGame()}, 3000)
             return;
+            guessField.value = "";
+
         }
         resultHTML = buildLetterFeedback(guess);
         if (guess === secretWord){
         
             showSecretWord();
             addGuessToTable(guess,resultHTML);
+            guessField.value = "";
+
         }else{
             addGuessToTable(guess,resultHTML);
+            guessField.value = "";
+
         }
     }else{
 
         guessField.classList.add('animate__animated', 'animate__shakeX');
 
-        setTimeout(() => {guessField.classList.remove('animate__animated', 'animate__shakeX');}, 500); // adjust (e.g. 800–1200ms)
+        setTimeout(() => {guessField.classList.remove('animate__animated', 'animate__shakeX');}, 500);
+        guessField.reset
 
 }
 
@@ -78,7 +78,7 @@ function buildLetterFeedback(guess){
         let letter = guess[i];
         let cssClass = "";
         if (letter === secretWord[i]) {
-            if (tries === 0){
+            if (tries === 1){
                 cssClass = "special";
 
             } else {
@@ -97,12 +97,6 @@ function buildLetterFeedback(guess){
 
 function addGuessToTable(guess, resultHTML){
     const row = document.createElement('tr');
-    let tryCell = document.createElement('td');
-    tryCell.textContent = tries + 1;
-    row.appendChild(tryCell);
-    let guessCell = document.createElement('td');
-    guessCell.innerHTML = guess.toUpperCase();
-    row.appendChild(guessCell);
     let resultCell = document.createElement('td');
     resultCell.innerHTML = resultHTML;
     row.appendChild(resultCell);

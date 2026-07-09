@@ -1,21 +1,8 @@
 .game-card{
     text-align: center;
 }
-#display{
-    margin: 20px 0;
-}
-#display span{
-    display:inline-block;
-    background-color: #f0f0f0;
-    border: 2px solid #333333;
-    width: 45px;
-    height: 45px;
-    border-radius: 8px;
-    line-height: 45px;
-    margin: 4px;
-    font-size: 26px;
-    font-weight: bold;
-}
+
+
 input {
     font-size: 18px;
     padding: 8px;
@@ -37,12 +24,10 @@ table{
 }
 
 th {
-    background-color: #1f5f99;
     color: white;
 
 }
 td, th {
-    border: 1px solid;
     padding: 10px;
     text-align: center;
 }
