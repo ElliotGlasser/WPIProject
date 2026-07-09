@@ -14,7 +14,6 @@ function startGame(){
     guessField.value = "";
     tableBody.innerHTML = "";
     console.log("Secret Word: " + secretWord);
-    hideSecretWord();
 }
 
 function showSecretWord(){
@@ -52,7 +51,6 @@ function checkGuess(){
         resultHTML = buildLetterFeedback(guess);
         if (guess === secretWord){
         
-            showSecretWord();
             addGuessToTable(guess,resultHTML);
             guessField.value = "";
 
