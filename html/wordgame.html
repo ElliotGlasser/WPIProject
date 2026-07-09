@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Word Game</title>
-<link rel="stylesheet" type="text/css" href="../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
     <link rel="stylesheet" type="text/css" href="../css/wordgame.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 
 <body>
@@ -32,7 +33,7 @@
                 <span>?</span>
             </div>
 
-            <label for="guess-field">Your guess:</label>
+            <label for="guess-field" >Your guess:</label>
             <input type="text" id="guess-field" maxlength="5" placeholder="Enter a 5-letter word">
             <button onclick="checkGuess()">Enter</button>
             <button onclick="startGame()">New Word</button>

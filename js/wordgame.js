@@ -41,7 +41,12 @@ function checkGuess(){
      if (words.includes(guess)) {    
         if (guess.length !== secretWord.length) {
             messageText.textContent = "Please enter a " + secretWord.length + " letter word.";
+            guessField.classList.add('animate__animated', 'animate__shakeX');
+
+            setTimeout(() => {guessField.classList.remove('animate__animated', 'animate__shakeX');}, 500); // adjust (e.g. 800–1200ms)
+
             return;
+
         }
         
         if (tries >6){
@@ -57,11 +62,16 @@ function checkGuess(){
         }else{
             addGuessToTable(guess,resultHTML);
         }
-    }else  {
-        messageText.textContent = "Please enter a valid word";
-        return;
-    }
+    }else{
+
+        guessField.classList.add('animate__animated', 'animate__shakeX');
+
+        setTimeout(() => {guessField.classList.remove('animate__animated', 'animate__shakeX');}, 500); // adjust (e.g. 800–1200ms)
+
 }
+
+}
+
 function buildLetterFeedback(guess){
     let resultHTML = "";
     for (let i = 0; i < guess.length; i++) {

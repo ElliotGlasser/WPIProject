@@ -50,6 +50,13 @@ td, th {
     font-weight: bold;
 
 }
+
+
+
+@keyframes shake {
+    0% { left: -5px; }
+    100% { right: -5px; }
+}
 .correct,
 .correct-demo{
     background-color: green;
