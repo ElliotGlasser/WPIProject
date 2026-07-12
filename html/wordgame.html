@@ -14,6 +14,7 @@
         <h1 id="wordtitle">Definetly not Wordle</h1>
         <p class="tagline">Guess the word!</p>
     </header>
+
     <nav>
         <a id="home-button" href="../index.html">Home</a>
         <a id="aboutme-button" href="aboutme.html">About Me</a>
@@ -38,8 +39,18 @@
             <input type="text" id="guess-field" maxlength="5" placeholder="APPLE">
             <button onclick="checkGuess()">Enter</button>
             <button onclick="startGame()">New Word</button>
+            <button onclick=""askForHint()>Hint</button>
 
-            <p id="message-text"></p>
+            <p id="message-text">Hello</p>
+
+        </section>
+        <section class="card">
+            <h2>Paste your WPI API key below. The key is saved only in this browser using <code>localStorage</code></h2>
+            <label for ="api-key-field">WPI API Key</label>
+            <input type="password" id="api-key-field" placeholder="Enter your API Key">
+            <button id="api-save-button" onclick="saveAPIKey()">Save API Key</button>
+            <button id="api-clear-button" onclick="clearAPIKey()">Clear API Key</button>
+            <p>Please don't publish your API key on Github or share it with others</p>
 
         </section>
 
