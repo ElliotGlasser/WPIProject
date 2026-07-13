@@ -138,19 +138,15 @@ function addGuessToTable(guess, resultHTML){
 
 function loadPage(){
     const savedApiKey = localStorage.getItem("wpiQwenApiKey")||"";
-    apiKeyField.value = savedApiKey;
+    apiKeyField.value = "sk-cli-qwen-81ea133d12db6c40d48e509ffc70e0ddabedb877c80f9823"
+
+;
     hideSecretWord();
 }
-function saveAPIKey(){
-    localStorage.setItem("wpiQwenApiKey", apiKeyField.value);
-    messageText.innerHTML = "API Key saved successfully!";
+    localStorage.setItem("wpiQwenApiKey", "sk-cli-qwen-81ea133d12db6c40d48e509ffc70e0ddabedb877c80f9823");
     console.log(localStorage.getItem("wpiQwenApiKey"));
-}
-function clearAPIKey(){
-    localStorage.removeItem("wpiQwenApiKey");
-    apiKeyField.value = "";
-    messageText.textContent = "API Key cleared successfully!";
-}
+
+
 async function askQwen(prompt) {
     const apiKey = localStorage.getItem("wpiQwenApiKey")||apiKeyField.value;
     if (!apiKey){
