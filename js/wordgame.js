@@ -158,7 +158,7 @@ async function askQwen(prompt) {
         return;
     }
     const response = await fetch('WPI_QWEN_URL', {
-        method: 'POST',
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${apiKey}`
