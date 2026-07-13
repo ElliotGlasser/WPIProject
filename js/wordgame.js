@@ -157,7 +157,7 @@ async function askQwen(prompt) {
         messageText.textContent = "Please enter your API key first.";
         return;
     }
-    const response = await fetch('WPI_QWEN_URL', {
+    const response = await fetch(WPI_QWEN_URL, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
