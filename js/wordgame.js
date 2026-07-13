@@ -142,8 +142,9 @@ function loadPage(){
     hideSecretWord();
 }
 function saveAPIKey(){
-    localStorage.setItem("wpiQwenApiKey",apiKeyField.value);
+    localStorage.setItem("wpiQwenApiKey", apiKeyField.value);
     messageText.innerHTML = "API Key saved successfully!";
+    console.log(localStorage.getItem("wpiQwenApiKey"));
 }
 function clearAPIKey(){
     localStorage.removeItem("wpiQwenApiKey");
@@ -154,7 +155,7 @@ async function askQwen(prompt) {
     const apiKey = localStorage.getItem("wpiQwenApiKey")||"apiKeyField.value";
     if (!apiKey){
         messageText.textContent = "Please enter your API key first.";
-        throw new Error("Missing API key");
+        return;
     }
     const response = await fetch('WPI_QWEN_URL', {
         method: 'POST',
@@ -174,7 +175,7 @@ async function askQwen(prompt) {
                     content: prompt
                 }
             ],
-            temperature: .7,
+            temperature: 0.7,
             max_tokens:200,
             stream:false,
             chat_template_kwargs:{
@@ -186,7 +187,7 @@ async function askQwen(prompt) {
         throw new Error('Network response was not ok');
     }
     const data = await response.json();
-    return data.choices[0].message.content.trim;
+    return data.choices[0].message.content.trim();
 }
 async function askForHint(){
     if (!secretWord){
