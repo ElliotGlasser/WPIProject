@@ -152,7 +152,7 @@ function clearAPIKey(){
     messageText.textContent = "API Key cleared successfully!";
 }
 async function askQwen(prompt) {
-    const apiKey = localStorage.getItem("wpiQwenApiKey")||"apiKeyField.value";
+    const apiKey = localStorage.getItem("wpiQwenApiKey")||apiKeyField.value;
     if (!apiKey){
         messageText.textContent = "Please enter your API key first.";
         return;
@@ -187,7 +187,9 @@ async function askQwen(prompt) {
         throw new Error('Network response was not ok');
     }
     const data = await response.json();
+    console.log(data);
     return data.choices[0].message.content.trim();
+
 }
 async function askForHint(){
     if (!secretWord){
