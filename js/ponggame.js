@@ -1,6 +1,6 @@
 class PongGame{
     constructor(){
-        this.canvas = document.getElementsById("gameboard");
+        this.canvas = document.getElementById("gameboard");
         this.ctx = this.canvas.getContext("2d");
         this.scoreboard = document.getElementById("scoreboard")
         this.resetButton = document.getElementById("reset");
