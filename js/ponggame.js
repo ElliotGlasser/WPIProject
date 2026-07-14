@@ -30,10 +30,10 @@ class pongGame{
         this.resetButton.addEventListener("click", () => {
             this.resetGame();
         });
-        // this.updateScore();
+        //this.updateScore();
         this.draw();
         this.start();
-        // this.start();
+        //this.start();
     }
     createObjects(){
             this.leftPaddle = new Paddle(
@@ -105,6 +105,8 @@ class pongGame{
 
         this.leftPaddle.move();
         this.rightPaddle.move();
+
+        //this.checkScore();
     }
 }
 
