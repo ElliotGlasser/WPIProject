@@ -1,4 +1,4 @@
-class KeyboardImp{
+class keyboardImp{
     constructor(leftPaddle, rightPadle, speed){
         this.leftPaddle = leftPaddle;
         this.rightPadle = rightPadle;

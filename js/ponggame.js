@@ -22,7 +22,11 @@ class pongGame{
 
         this.createObjects();
         this.resetBall();
-        this.controls = new KeyBoardControls(this.leftPaddle, this.rightPaddle, this.paddleSpeed);
+        this.controls = new keyboardImp(
+            this.leftPaddle, 
+            this.rightPaddle, 
+            this.paddleSpeed
+        );
         this.resetButton.addEventListener("click", () => {
             this.resetGame();
         });
