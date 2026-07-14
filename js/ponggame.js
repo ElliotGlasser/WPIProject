@@ -1,4 +1,4 @@
-class PongGame{
+class pongGame{
     constructor(){
         this.canvas = document.getElementById("gameboard");
         this.ctx = this.canvas.getContext("2d");
@@ -87,5 +87,5 @@ class PongGame{
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-    new PongGame();
+    new ponggame();
 });
