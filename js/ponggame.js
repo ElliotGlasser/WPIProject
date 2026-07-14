@@ -87,7 +87,25 @@ class pongGame{
         this.rightPaddle.draw(this.ctx);
 
     }
+    stop(){
+        if(this.timerId!== null){
+            clearInterval(this.timerId);
+            this.timerId = null;
+        }
+    }
+    gameloop(){
+        this.update()
+        this.draw();
+    }
+    update(){
+        this.ball.move();
+        this.ball.bounceOffTopAndBottom(this.boardHeight);
+        this.ball.bounceOffLeftPaddle(this.leftPaddle);
+        this.ball.bounceOffRightPaddle(this.rightPaddle);
 
+        this.leftPaddle.move();
+        this.rightPaddle.move();
+    }
 }
 
 window.addEventListener("DOMContentLoaded", () => {
