@@ -87,5 +87,5 @@ class pongGame{
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-    new ponggame();
+    new pongGame();
 });
