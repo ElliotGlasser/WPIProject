@@ -30,10 +30,10 @@ class pongGame{
         this.resetButton.addEventListener("click", () => {
             this.resetGame();
         });
-        //this.updateScore();
+        this.updateScore();
         this.draw();
         this.start();
-        //this.start();
+        this.start();
     }
     createObjects(){
             this.leftPaddle = new Paddle(
@@ -106,7 +106,39 @@ class pongGame{
         this.leftPaddle.move();
         this.rightPaddle.move();
 
-        //this.checkScore();
+        this.checkScore();
+    }
+
+    updateScore(){
+        this.scoreboard.innerHTML = this.score.getScore();
+    }
+    checkScore(){
+        if (this.ball.ispastLeftWall()){
+            this.scoreboard.rightScore();
+            this.afterScore();
+        }
+        if (this.ball.ispastRightWall()){
+            this.scoreboard.leftScore();
+            this.afterScore();
+        }
+    }
+    afterScore(){
+        this.updateScore();
+        this.resetPaddles();
+        this.resetBall();
+    }
+    resetPaddles(){
+        const centerY = this.boardHeight / 2 - this.paddleHeight/2;
+        this.leftPaddle.reset(centerY);
+        this.rightPaddle.reset(centerY);
+    }
+    resetGame(){
+        this.stop();
+        this.score.reset();
+        this.updateScore();
+        this.resetBall();
+        this.draw();
+        this.start();
     }
 }
 
