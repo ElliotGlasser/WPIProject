@@ -4,18 +4,24 @@ class PongGame{
         this.ctx = this.canvas.getContext("2d");
         this.scoreboard = document.getElementById("scoreboard")
         this.resetButton = document.getElementById("reset");
+
         this.boardWidth = 500;
         this.boardHeight = 500;
+
         this.paddleWidth = 25;
         this.paddleHeight = 100;
         this.paddleSpeed = 5;
+
         this.ballRadius = 12.5;
         this.ballSpeed = 1;
+
         this.timerId = null
 
         this.canvas.width = this.boardWidth;
         this.canvas.height = this.boardHeight;
+
         this.createObjects();
+        this.resetBall();
         this.controls = new KeyBoardControls(this.leftPaddle, this.rightPaddle, this.paddleSpeed);
         this.resetButton.addEventListener("click", () => {
             this.resetGame();
