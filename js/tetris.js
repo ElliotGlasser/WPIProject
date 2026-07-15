@@ -27,8 +27,8 @@ const pieces = [
 ];
 
 const colors = [
-    '#FF0D72', '#0DC2FF', '#0DFF72',
-    '#F538FF', '#FF8E0D', '#FFE138', '#3877FF'
+    '#ffffff', '#ffffff', '#0DffffffFF72',
+    '#ffffff', '#ffffff', '#ffffff', '#ffffff'
 ];
 
 let currentPiece = null;
@@ -156,7 +156,7 @@ function collide(piece = currentPiece, pos = currentPiecePos) {
 function getGhostPosition() {
     const ghostPos = { ...currentPiecePos };
     while (!collide(currentPiece, { ...ghostPos, y: ghostPos.y + 1 })) {
-        ghostPos.y++;
+        ghostPos.x++;
     }
     return ghostPos;
 }
