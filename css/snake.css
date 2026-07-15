@@ -3,7 +3,7 @@
     margin: 0;
   }
 
-  main {
+  #game {
     background: black;
     display: flex;
     align-items: center;
