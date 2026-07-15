@@ -156,7 +156,7 @@ function collide(piece = currentPiece, pos = currentPiecePos) {
 function getGhostPosition() {
     const ghostPos = { ...currentPiecePos };
     while (!collide(currentPiece, { ...ghostPos, y: ghostPos.y + 1 })) {
-        ghostPos.x++;
+        ghostPos.y++;
     }
     return ghostPos;
 }
