@@ -1,7 +1,6 @@
 var canvas = document.getElementById('game');
 var context = canvas.getContext('2d');
-
-
+let score = 0;
 var grid = 16;
 var count = 0;
 
@@ -83,10 +82,12 @@ function loop() {
     // snake ate apple
     if (cell.x === apple.x && cell.y === apple.y) {
       snake.maxCells++;
+      score +=1
 
       // canvas is 400x400 which is 25x25 grids
       apple.x = getRandomInt(0, 25) * grid;
       apple.y = getRandomInt(0, 25) * grid;
+
     }
 
     // check collision with all cells after this one (modified bubble sort)
@@ -94,6 +95,10 @@ function loop() {
 
       // snake occupies same space as a body part. reset game
       if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
+        alert("Score: " + score);
+        context.clearRect(0,0,canvas.width,canvas.height);
+        score = 0
+
         
         snake.x = 160;
         snake.y = 160;
