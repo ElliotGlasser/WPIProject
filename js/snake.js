@@ -30,7 +30,7 @@ function getRandomInt(min, max) {
 }
 
 // game loop
-async function loop() {
+function loop() {
   requestAnimationFrame(loop);
 
   // slow game loop to 15 fps instead of 60 (60/15 = 4)
@@ -94,8 +94,7 @@ async function loop() {
 
       // snake occupies same space as a body part. reset game
       if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
-        await delay(5000);
-
+        
         snake.x = 160;
         snake.y = 160;
         snake.cells = [];
