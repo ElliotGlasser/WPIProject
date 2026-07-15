@@ -45,7 +45,7 @@ class Ball{
         const ballTop = this.y - this.radius;
         const ballBottom = this.y + this.radius;
         const paddleRight = paddle.x + paddle.width;
-        const paddleLeft = paddle.x;
+        const paddleTop = paddle.y;
         const paddleBottom = paddle.y + paddle.height;
 
         if (ballLeft > paddleRight) return false;
@@ -60,8 +60,8 @@ class Ball{
         const ballRight = this.x + this.radius;
         const ballTop = this.y - this.radius;
         const ballBottom = this.y + this.radius;
-        const paddleRight = paddle.x + paddle.width;
-        const paddleLeft = paddle.x;
+        const paddleLeft = paddle.x - paddle.width;
+        const paddleTop = paddle.y;
         const paddleBottom = paddle.y + paddle.height;
         if (ballRight < paddleLeft) return false;
         if (ballTop > paddleBottom) return false;
@@ -71,5 +71,12 @@ class Ball{
         }
         return true;
 
+    }
+
+    isPastLeftWall(){
+        return this.x + this.radius < 0;
+    }
+    isPastRightWall(){
+        return this.x - this.radius > window.innerWidth;
     }
 }

@@ -1,4 +1,4 @@
-class Score{
+class score{
     constructor(){
         this.left = 0;
         this.right = 0;
@@ -17,6 +17,6 @@ class Score{
         this.right++;
     }
     getScore(){
-        return `&{this.left} : &{this.right}`;
+        return '&{this.left} : &{this.right}';
     }
 }

@@ -19,9 +19,8 @@ class pongGame{
 
         this.canvas.width = this.boardWidth;
         this.canvas.height = this.boardHeight;
-
+    this.score = new score();
         this.createObjects();
-        this.resetBall();
         this.controls = new keyboardImp(
             this.leftPaddle, 
             this.rightPaddle, 
@@ -32,7 +31,6 @@ class pongGame{
         });
         this.updateScore();
         this.draw();
-        this.start();
         this.start();
     }
     createObjects(){
@@ -87,6 +85,9 @@ class pongGame{
         this.rightPaddle.draw(this.ctx);
 
     }
+    start(){
+        this.timerId = setInterval(() => this.gameloop(), 10);
+    }
     stop(){
         if(this.timerId!== null){
             clearInterval(this.timerId);
@@ -113,11 +114,11 @@ class pongGame{
         this.scoreboard.innerHTML = this.score.getScore();
     }
     checkScore(){
-        if (this.ball.ispastLeftWall()){
+        if (this.ball.isPastLeftWall()){
             this.scoreboard.rightScore();
             this.afterScore();
         }
-        if (this.ball.ispastRightWall()){
+        if (this.ball.isPastRightWall()){
             this.scoreboard.leftScore();
             this.afterScore();
         }
