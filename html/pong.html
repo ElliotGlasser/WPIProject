@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pong Game</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
-    <link rel="stylesheet" type="text/css" href="../css/ponggame.css" />
+    <link rel="stylesheet" type="text/css" href="../css/snake.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 
@@ -20,25 +20,19 @@
         <a id="home-button" href="../index.html">Home</a>
         <a id="aboutme-button" href="aboutme.html">About Me</a>
         <a id="mytown-button" href="mytown.html">My Town</a>
-        <a id="numgame-button" href="numgame.html">Number Game</a>
-        <a id="wordgame-button" href="wordgame.html">Word Game</a>
-        <a id="ponggame-button" href="ponggame.html">Pong Game</a>
+        <a id="games-button" href="games.html">Games</a>
     </nav>
 
     <main>
         <section class="card">
-            <canvas id="gameboard" width="500" height="500">
-            
-            </canvas>
-            <div id="scoreboard">0:0</div>
-            <button id="reset">Reset</button>
+            <h2>Play Pong!</h2>
+            <canvas width="400" height="400" id="game"></canvas>
         </section>
     </main>
-    <script src="../js/ponggame.js"></script>
-    <script src="../js/paddle.js"></script>
-    <script src="../js/ball.js"></script>
-    <script src="../js/score.js"></script>
-    <script src="../js/keyboardcontrol.js"></script>
+    <script src="../js/pong.js"></script>
+    <footer>
+        <p>Created by Elliot for Launch</p>
+    </footer>
 
 
     </body>
