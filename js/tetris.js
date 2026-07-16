@@ -27,7 +27,7 @@ const pieces = [
 ];
 
 const colors = [
-    '#ffffff', '#ffffff', '#0DffffffFF72',
+    '#ffffff', '#ffffff', '#ffffff',
     '#ffffff', '#ffffff', '#ffffff', '#ffffff'
 ];
 
